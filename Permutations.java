@@ -14,8 +14,8 @@ public class Permutations {
         char ch=up.charAt(0);
         for(int i=0;i<=p.length();i++)
         {
-            String f=up.substring(0,i);
-            String s=up.substring(i, p.length());
+            String f=p.substring(0,i);
+            String s=p.substring(i, p.length());
 
             Permutations(f+ch+s,up.substring(1));
         }
