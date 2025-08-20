@@ -1,0 +1,33 @@
+class Solution {
+    public int cntSubarrays(int[] arr, int k) {
+        // code here
+        Map<Integer,Integer> mpp=new HashMap<>();
+        
+        int sum=0;
+        int c=0;
+        mpp.put(0,1);
+        
+        for(int i=0;i<arr.length;i++)
+        {
+            sum+=arr[i];
+            
+            
+            if(mpp.containsKey(sum-k))
+            {
+                c+=mpp.get(sum-k);
+            }
+            
+            if(!mpp.containsKey(sum))
+            {
+                mpp.put(sum,1);
+            }
+            else{
+                mpp.put(sum,mpp.get(sum)+1);
+            
+        }
+        
+        
+    }
+    return c;
+}
+}
